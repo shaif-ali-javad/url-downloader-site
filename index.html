@@ -4,51 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
         
+        body {
+          background-color: #fff;
+          color: #011032;
+        }
+        
+        /* .header {
+           transition: 500ms;
+           max-width: 100%;
+           padding: 4rem 2rem;
+           transition:padding 500ms ease-in-out, background-color 500ms ease-in-out;
+        } */
+        
+        .header {
+          background-color: #ffffff;
+          transition: padding 500ms ease-in-out, background-color 500ms ease-in-out;
+          padding: 0.4rem 2rem;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 7px 20px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .header img {
+          width: 7rem;
+        }
+        
+        /* .header .navbar button{
+           outline:none ;
+           transition: 1s;
+        }
+        
+        .header .navbar button:active{
+           transition: 500ms;
+           background-color: #00000065;
+        }
+        
+        .header.sticky .navbar button:active{
+           transition: 500ms;
+           background-color: #000000bf;
+        }
+        
+        .header.sticky .navbar button{
+           outline: .2rem solid rgba(33, 33, 33, 0.036) ;
+        }
+        
+        .header .navbar-nav button .navbar-toggler-icon {
+           color: #fff;
+        } */
+        
+        .header .navbar-nav li {
+          padding: 0 1rem;
+        }
+        
+        .header .navbar-nav .active {
+          background-color: #ef4323;
+          border-radius: 3rem;
+        }
+        
+        .header.sticky .navbar-nav .active {
+          background-color: #ef4323;
+        }
+        
+        .header .navbar-nav li {
+          transition: border-radius 500ms ease-in-out,
+            background-color 500ms ease-in-out;
+        }
+        
+        .header .navbar-nav li:hover {
+          background-color: #ef4323;
+          border-radius: 3rem;
+        }
+        
+        .header .navbar-nav .active a {
+          color: #fff;
+        }
+        
+        /* .header.sticky .navbar-nav li a {
+           transition: color 500ms ease-in-out;
+        }
+        
+        .header.sticky .navbar-nav li a {
+           color: #011032;
+        }
+        */
+        
+        .header .navbar-nav li:hover a {
+          color: #fff;
+        }
+        
+        .header .navbar-nav li a {
+          color: #011032;
+        }
+        
+        @media (max-width: 1199px) {
+          .header {
+            display: none;
+          }
+        }
     </style>
 </head>
 <body>
-    <section>
-        <div class="wrapper hidden">
-            <header>
-                <h1>
-                    File Downloader
-                </h1>
-                <p>
-                    paste url of image, video, or pdf file
-                </p>
-            </header>
-            <form action="#">
-                <input type="url" placeholder="Paste url" required>
-                <button>
-                    Download File
-                </button>
-            </form>
+
+    <!-- ======= Header ======= -->
+    <header class="header fixed-top">
+        <div class="row">
+          <div class="logo col-2 p-2 pl-5 my-auto">
+            <!-- <a class="nav-link" href="index.html">
+              <img src="image/Artboard 1@00x.png" alt="">
+            </a> -->
+            <a class="nav-link" href="https://www.onetechuae.com/">
+              <img src="image/Artboard 1@00x.png" alt="">
+            </a>
+          </div>
+          <div class="col-5 col-md-3 col-lg-7 my-auto ml-auto">
+            <nav class="navbar navbar-expand-lg">
+              <!-- <button class="navbar-toggler ml-auto mt-2 mb-2 btn-none navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+    
+              <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <!-- <li class="nav-item active">
+                    <a class="nav-link" href="home.html">HOME <span class="sr-only">(current)</span></a>
+                  </li> -->
+                  <li class="nav-item active">
+                    <a class="nav-link" href="https://www.onetechuae.com/">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about us.html">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="services.html">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact us.html">CONTACT US</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
-    </section>
-
-    <section class="s-1">
-        <h2>don't use url of image, video, or file from google front page, use url that you get inside of websites</h2>
-        <div class="logos">
-            <div class="logo hidden">
-                <img src="images\Artboard 1@00x1.png" alt="" width="200">
-            </div>
-            <div class="logo hidden">
-                <img src="images\insurance.png" alt="" width="200">
-            </div>
-            <div class="logo hidden">
-                <img src="images\customer-service.png" alt="" width="200">
-            </div>
-            <div class="logo hidden">
-                <img src="images\cyber-security.png" alt="" width="200">
-            </div>
-        </div>
-    </section>
-
-    <script src="js.js"></script>
-
+      </header>
 </body>
 </html>
